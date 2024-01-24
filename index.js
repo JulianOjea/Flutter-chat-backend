@@ -23,7 +23,9 @@ const publicPath = path.resolve(__dirname, 'public'); //apunta a donde está mon
 app.use(express.static(publicPath));
 
 //Mis Rutas
-app.use('/api/login', require('./routes/auth'))
+app.use('/api/login', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/messages', require('./routes/messages'));
 
 //escucha en el puerto 3000
 server.listen(process.env.PORT, (err) => { //callback que develve un error si sucede
